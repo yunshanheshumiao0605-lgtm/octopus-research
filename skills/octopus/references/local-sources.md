@@ -4,7 +4,7 @@
 
 ## 1. 初始化私有配置
 
-先安装 Octopus，再选需要的组件。以下命令以 Codex 安装位置为例；其他宿主把 `skill_dir` 改成实际路径。
+先安装 Octopus，再选需要的组件。以下命令以 Codex 安装位置为例；使用其他 AI 助手时，把 `skill_dir` 改成实际的技能安装路径。
 
 ```sh
 skill_dir="${CODEX_HOME:-$HOME/.codex}/skills/octopus"

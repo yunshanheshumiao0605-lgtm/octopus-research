@@ -55,7 +55,7 @@ Perplexity 是可选的额外检索/合成服务，需 OpenRouter 等配置，�
 python3.12 "$skill_dir/scripts/domestic_sources.py" --sources weibo,zhihu --output "$run_dir/domestic-candidates.json"
 ```
 
-选公众号且需要更新时可加 `--sync-wechat`。该脚本的 `--sources` 与原引擎的 `--search` 参数不同，不向引擎传入未支持的平台名称。来源入口会等待服务就绪，完成、普通失败、超时或正常取消时清理本次进程。强制终止整个宿主、操作系统崩溃等情况不属于已保证的清理路径。
+选公众号且需要更新时可加 `--sync-wechat`。该脚本的 `--sources` 与原引擎的 `--search` 参数不同，不向引擎传入未支持的平台名称。来源入口会等待服务就绪，完成、普通失败、超时或正常取消时清理本次进程。强制结束 AI 助手应用程序、操作系统崩溃等情况不属于已保证的清理路径。
 
 `candidates` 是待核验材料；`coverage` 记录本次实际结果。`topic_matches` 使用用户配置的关键词，默认关键词为空，不丢弃未命中的条目。热榜时间与 WeRSS 提供的待核日期不能伪装成精确的新事件时间。
 

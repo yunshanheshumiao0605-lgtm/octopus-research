@@ -2,11 +2,18 @@
 """Check portable release content without opening user configuration or using network."""
 from pathlib import Path
 import ast
+import hashlib
 import json
 import re
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
+
+# Permit only the reviewed README illustration; other binary files remain blocked.
+PUBLIC_IMAGE_HASHES = {
+    "assets/octopus-researcher.png":
+        "e17a177c19dfc89801151ed602df6a84a219a31d5b7d534e67b9a6467deb252a",
+}
 
 
 def release_files():
@@ -41,6 +48,14 @@ def check(files):
             ".db", ".sqlite", ".log", ".pyc", ".pem", ".key"
         } or path.name in {"cookies.json", "auth.json", "preferences.local.md"}:
             errors.append(f"{relative}: private file type")
+        if relative.as_posix() in PUBLIC_IMAGE_HASHES:
+            data = path.read_bytes()
+            if not data.startswith(b"\x89PNG\r\n\x1a\n") or (
+                hashlib.sha256(data).hexdigest()
+                != PUBLIC_IMAGE_HASHES[relative.as_posix()]
+            ):
+                errors.append(f"{relative}: image differs from reviewed asset")
+            continue
         try:
             text = path.read_text()
         except UnicodeDecodeError:

@@ -1,5 +1,7 @@
 # 🐙 Octopus · 章鱼
 
+![章鱼研究员从不同来源搜集资料，用放大镜核验线索，再整理成清晰的研究报告。](assets/octopus-researcher.png)
+
 **你给一个话题，章鱼帮你搜集信息、核验来源、理清脉络，整理成有依据的中文研究。**
 
 > 本项目基于 **[Matt Van Horn 的 last30days-skill](https://github.com/mvanhorn/last30days-skill)** 改良，沿用其 v3.3.2 采集引擎。原作者及贡献者提供了核心检索能力；Octopus 增加中文研究规则、按需启动的国内来源入口、每日增量记录和发布版配置说明。它是独立维护的衍生版本，不代表上游官方。

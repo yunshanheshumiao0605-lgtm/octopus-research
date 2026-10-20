@@ -1,0 +1,8 @@
+interface:
+  display_name: "Octopus · 章鱼研究助手"
+  short_description: "围绕你指定的话题联网搜集、筛选和核验资料，整理成有来源、有判断的中文研究"
+  default_prompt: "使用 $octopus（章鱼）研究我指定的话题，按需要搜集近期动态、背景与真实经验，核验来源，归纳要点并区分事实与推断。"
+  brand_color: "#FF6B35"
+
+policy:
+  allow_implicit_invocation: true
